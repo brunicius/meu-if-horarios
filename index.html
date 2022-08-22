@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+  <link rel="manifest" href="icon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+
+  <meta property="og:title" content="Meu IF Horário">
+  <meta property="og:site_name" content="Meu IF">
+  <meta property="og:url" content="https://horario.vrxno.repl.co">
+  <meta property="og:description" content="Meu IF Horários - Simple site">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://horario.vrxno.repl.co/media/PCC%20WHITE.png">
+
+
+  <title>Horários</title>
+</head>
+
+<body class="light">
+  <div class="header">
+    <div class="logo light"></div>
+    <div class="dm-w">
+      <label class="dm-switch">
+        <input id="darkModeCB" type="checkbox">
+        <span class="slider"></span>
+        <div style="margin-top: 35%;" class="btns">
+          <button style="margin-left: 15%; font-size: 14px;" name="increase-font" id="increase-font"
+            title="Aumentar fonte">A +</button>
+          <button name="decrease-font" style="font-size: 14px;" id="decrease-font" title="Diminuir fonte">A -</button>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div class="container" id="container">
+    <div class="title light" tabindex="0">
+      <h2>Horário de Aulas</h2>
+      <p>EMI Informática - 4º Ano - Anual</p>
+    </div>
+
+    <div class='debug'>
+      <h3>Seção de Debug</h3>
+      <input type="datetime-local" id="debugDate" />
+    </div>
+
+
+    <div class="parcial-time">
+      <div class="today" tabindex="0">
+        <div onclick="swipeLeft()" class="time-title">
+          <h3>Hoje</h3>
+          <p id="time-day-today">Carregando</p>
+        </div>
+        <div class="time-list">
+          <div class="time">
+            <div class="s-title active">Agora</div>
+            <div class="time-hour">Carregando</div>
+            <div class="time-name">Carregando</div>
+            <div class="time-teacher">
+              <div class="tt-title time-sub-title">Professor</div>
+              <div class="tt-name time-sup-title">Carregando</div>
+            </div>
+            <div class="time-room">
+              <div class="tr-title time-sub-title">Sala</div>
+              <div class="tr-name time-sup-title">Carregando</div>
+            </div>
+            <div class="status">
+              <div class="s-title">Em aula</div>
+              <div class="pb-w">
+                <div class="pb"></div>
+              </div>
+            </div>
+          </div>
+          <div class="time">
+            <div class="s-title">Não iniciada</div>
+            <div class="time-hour">Carregando</div>
+            <div class="time-name">Carregando</div>
+            <div class="time-teacher">
+              <div class="tt-title time-sub-title">Professora</div>
+              <div class="tt-name time-sup-title">Carregando</div>
+            </div>
+            <div class="time-room">
+              <div class="tr-title time-sub-title">Sala</div>
+              <div class="tr-name time-sup-title">Carregando</div>
+            </div>
+            <div class="status">
+              <div class="pb-w hidden">
+                <div class="pb"></div>
+              </div>
+            </div>
+          </div>
+          <div class="time">
+            <div class="time-hour">Carregando</div>
+            <div class="time-name">Carregando</div>
+            <div class="time-teacher">
+              <div class="tt-title time-sub-title">Professora</div>
+              <div class="tt-name time-sup-title">Carregando</div>
+            </div>
+            <div class="time-room">
+              <div class="tr-title time-sub-title">Sala</div>
+              <div class="tr-name time-sup-title">Carregando</div>
+            </div>
+            <div class="status">
+              <div class="s-title">Não iniciada</div>
+              <div class="pb-w hidden">
+                <div class="pb"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tomorrow" tabindex="0">
+        <div onclick="swipeRight()" class="time-title">
+          <h3>Amanhã</h3>
+          <p id="time-day-tomorrow">Carregando</p>
+        </div>
+        <div class="time-list">
+          <div class="time">
+            <div class="time-hour">Carregando</div>
+            <div class="time-name">Carregando</div>
+            <div class="time-teacher">
+              <div class="tt-title time-sub-title">Professora</div>
+              <div class="tt-name time-sup-title">Carregando</div>
+            </div>
+            <div class="time-room">
+              <div class="tr-title time-sub-title">Sala</div>
+              <div class="tr-name time-sup-title">Carregando</div>
+            </div>
+            <div class="status">
+              <div class="s-title">Não iniciada</div>
+              <div class="pb-w hidden">
+                <div class="pb"></div>
+              </div>
+            </div>
+          </div>
+          <div class="time">
+            <div class="time-hour">Carregando</div>
+            <div class="time-name">Carregando</div>
+            <div class="time-teacher">
+              <div class="tt-title time-sub-title">Professora</div>
+              <div class="tt-name time-sup-title">Carregando</div>
+            </div>
+            <div class="time-room">
+              <div class="tr-title time-sub-title">Sala</div>
+              <div class="tr-name time-sup-title">Carregando</div>
+            </div>
+            <div class="status">
+              <div class="s-title">Não iniciada</div>
+              <div class="pb-w hidden">
+                <div class="pb"></div>
+              </div>
+            </div>
+          </div>
+          <div class="time">
+            <div class="time-hour">Carregando</div>
+            <div class="time-name">Carregando</div>
+            <div class="time-teacher">
+              <div class="tt-title time-sub-title">Professora</div>
+              <div class="tt-name time-sup-title">Carregando</div>
+            </div>
+            <div class="time-room">
+              <div class="tr-title time-sub-title">Sala</div>
+              <div class="tr-name time-sup-title">Carregando</div>
+            </div>
+            <div class="status">
+              <div class="s-title">Não iniciada</div>
+              <div class="pb-w hidden">
+                <div class="pb"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="complete-times" tabindex="0">
+      <h1 class="ct-title">Horário Completo</h1>
+      <div class="ct-list">
+        <div class="ct-day">
+          <div class="ct-day-title">Segunda feira</div>
+          <div class="ct-tl">
+            <div class="time">
+              <div class="time-hour">07:30 - 09:00</div>
+              <div class="time-name">Disciplina</div>
+              <div class="time-teacher">
+                <div class="tt-title time-sub-title">Professor (a)</div>
+                <div class="tt-name time-sup-title">Carregando</div>
+              </div>
+              <div class="time-room">
+                <div class="tr-title time-sub-title">Sala</div>
+                <div class="tr-name time-sup-title">B-09</div>
+              </div>
+            </div>
+            <div class="time">
+              <div class="time-hour">07:30 - 09:00</div>
+              <div class="time-name">Disciplina</div>
+              <div class="time-teacher">
+                <div class="tt-title time-sub-title">Professor (a)</div>
+                <div class="tt-name time-sup-title">Carregando</div>
+              </div>
+              <div class="time-room">
+                <div class="tr-title time-sub-title">Sala</div>
+                <div class="tr-name time-sup-title">B-09</div>
+              </div>
+            </div>
+            <div class="time">
+              <div class="time-hour">07:30 - 09:00</div>
+              <div class="time-name">Disciplina</div>
+              <div class="time-teacher">
+                <div class="tt-title time-sub-title">Professor (a)</div>
+                <div class="tt-name time-sup-title">Carregando</div>
+              </div>
+              <div class="time-room">
+                <div class="tr-title time-sub-title">Sala</div>
+                <div class="tr-name time-sup-title">B-09</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ct-day">
+          <div class="ct-day-title">Segunda feira</div>
+          <div class="ct-tl">
+            <div class="time">
+              <div class="time-hour">07:30 - 09:00</div>
+              <div class="time-name">Disciplina</div>
+              <div class="time-teacher">
+                <div class="tt-title time-sub-title">Professor (a)</div>
+                <div class="tt-name time-sup-title">Carregando</div>
+              </div>
+              <div class="time-room">
+                <div class="tr-title time-sub-title">Sala</div>
+                <div class="tr-name time-sup-title">B-09</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ct-day">
+          <div class="ct-day-title">Segunda feira</div>
+          <div class="ct-tl">
+            <div class="time">
+              <div class="time-hour">07:30 - 09:00</div>
+              <div class="time-name">Disciplina</div>
+              <div class="time-teacher">
+                <div class="tt-title time-sub-title">Professor (a)</div>
+                <div class="tt-name time-sup-title">Carregando</div>
+              </div>
+              <div class="time-room">
+                <div class="tr-title time-sub-title">Sala</div>
+                <div class="tr-name time-sup-title">B-09</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ct-day">
+          <div class="ct-day-title">Segunda feira</div>
+          <div class="ct-tl">
+            <div class="time">
+              <div class="time-hour">07:30 - 09:00</div>
+              <div class="time-name">Disciplina</div>
+              <div class="time-teacher">
+                <div class="tt-title time-sub-title">Professor (a)</div>
+                <div class="tt-name time-sup-title">Carregando</div>
+              </div>
+              <div class="time-room">
+                <div class="tr-title time-sub-title">Sala</div>
+                <div class="tr-name time-sup-title">B-09</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ct-day">
+          <div class="ct-day-title">Segunda feira</div>
+          <div class="ct-tl">
+            <div class="time">
+              <div class="time-hour">07:30 - 09:00</div>
+              <div class="time-name">Disciplina</div>
+              <div class="time-teacher">
+                <div class="tt-title time-sub-title">Professor (a)</div>
+                <div class="tt-name time-sup-title">Carregando</div>
+              </div>
+              <div class="time-room">
+                <div class="tr-title time-sub-title">Sala</div>
+                <div class="tr-name time-sup-title">B-09</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="credits">
+      <p>Ferramenta em fase de testes por <a target="_blank" href="https://www.instagram.com/meu.if/">Meu IF</a>
+      </p>
+    </div>
+    <!-- <div class="test">
+            <p class="time-sub-title">Área de Testes</p>
+            <h2 style="margin: 5px;">Definir data personalizada</h2>
+            <input type="checkbox" name="t" id="activeDateInput">
+            <input id="test" type="datetime-local">
+            <button id="update">Atualizar</button>
+        </div> -->
+
+    <!-- <div class="complete-times">
+            <div class="ct-title">
+                <h1>Horário completo</h1>
+            </div>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Seg</th>
+                            <th>Ter</th>
+                            <th>Qua</th>
+                            <th>Qui</th>
+                            <th>Sex</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7:30 - 8:15</td>
+                            <td rowspan="2">ASOR</td>
+                            <td rowspan="2">Geografia 3</td>
+                            <td rowspan="2">Programação Web</td>
+                            <td rowspan="2">Instalações Elétricas Aplicadas</td>
+                            <td rowspan="2">Espanhol 2</td>
+                        </tr>
+                        <tr>
+                            <td>8:15 - 9:00</td>
+                        </tr>
+                        <tr>
+                            <td>9:00 - 9:45</td>
+                            <td rowspan="4">PCC</td>
+                            <td rowspan="2">Higiene e Segurança do Trabalho</td>
+                            <td rowspan="2">Sociologia 3</td>
+                            <td rowspan="2">Segurança da Informação</td>
+                            <td rowspan="2">Programação Web</td>
+                        </tr>
+                        <tr>
+                            <td>10:00 - 10:45</td>
+                        </tr>
+                        <tr>
+                            <td>10:45 - 11:30</td>
+                            <td rowspan="2">ASOR</td>
+                            <td rowspan="2">História 3</td>
+                            <td rowspan="2">Língua Portuguesa</td>
+                            <td rowspan="2">Eletrônica Aplicada</td>
+                        </tr>
+                        <tr>
+                            <td>11:30 - 12:15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+
+  </div>
+  <script src="core.js"></script>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+</html>
