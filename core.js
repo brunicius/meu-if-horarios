@@ -11,7 +11,6 @@ let dayNames = [
     "Quinta-feira",
     "Sexta-feira",
     "Sábado"
-    ""
 ]
 
 let timesArray = [
